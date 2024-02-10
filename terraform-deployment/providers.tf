@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    docker = {
+      source = "kreuzwerker/docker"
+    }
+  }
+}
+
 provider "docker" {
-  # No configuration needed for the Docker provider
+  # Provider configuration, if any
 }
