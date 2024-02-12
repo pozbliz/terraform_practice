@@ -31,9 +31,6 @@ jobs:
   cleanup:
     needs: deploy
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./terraform-deployment
 
     steps:
       - name: Install Terraform
