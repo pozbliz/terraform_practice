@@ -2,7 +2,7 @@ name: Terraform Deployment
 
 on:
   workflow_run:
-    workflows: ["main.yml"]
+    workflows: ["ci"]
     types:
       - completed
 
