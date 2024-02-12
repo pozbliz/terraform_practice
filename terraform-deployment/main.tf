@@ -7,11 +7,11 @@ terraform {
   }
 }
 
-# Implicit provider detection can occur if tf finds Docker socket or API on system,
-# but it is recommended to explicitly declare provider configuration
-provider "docker" {
-  host    = "npipe:////.//pipe//docker_engine"
-}
+## Implicit provider detection can occur if tf finds Docker socket or API on system,
+## but it is recommended to explicitly declare provider configuration
+#provider "docker" {
+#  host    = "npipe:////.//pipe//docker_engine"
+#}
 
 # Specify image
 resource "docker_image" "terraform_practice" {
