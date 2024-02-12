@@ -9,19 +9,13 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./terraform-deployment
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Print current directory
-        run: pwd
-
-      - name: Change directory to terraform-deployment
-        run: cd terraform-deployment
-
-      - name: Print current directory
-        run: pwd
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v1
