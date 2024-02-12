@@ -13,10 +13,12 @@ provider "docker" {
   host    = "npipe:////.//pipe//docker_engine"
 }
 
+# Specify image
 resource "docker_image" "terraform_practice" {
   name = "pozbliz/terraform_practice:latest"
 }
 
+# Specify container
 resource "docker_container" "py-app-container" {
   name  = "flask_app"
   image = docker_image.terraform_practice.name
