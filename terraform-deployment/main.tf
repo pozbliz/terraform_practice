@@ -18,5 +18,8 @@ resource "docker_image" "terraform_practice" {
 resource "docker_container" "py-app-container" {
   name  = "flask_app"
   image = docker_image.terraform_practice.name
-
+  ports {
+    internal = 8000
+    external = 8000
+  }
 }
