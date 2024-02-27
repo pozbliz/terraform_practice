@@ -7,6 +7,9 @@
 ARG PYTHON_VERSION=3.8.18
 FROM python:${PYTHON_VERSION}-slim as base
 
+# Install netcat
+RUN apt-get update && apt-get install -y netcat
+
 # Prevents Python from writing pyc files.
 ENV PYTHONDONTWRITEBYTECODE=1
 
