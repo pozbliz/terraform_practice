@@ -1,4 +1,6 @@
 terraform {
+  required_version = ">= 1.7.0"
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -7,15 +9,14 @@ terraform {
   }
 }
 
-# Provider block
 provider "aws" {
-  region     = "ap-northeast-1"
+  region = "ap-northeast-1"
 }
 
-# Resources block
 resource "aws_instance" "app_server" {
-  ami = "ami-0b5c74e235ed808b9"
+  ami           = "ami-0b5c74e235ed808b9"
   instance_type = "t2.micro"
+
   tags = {
     Name = "terraform-instance"
   }
